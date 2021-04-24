@@ -1,0 +1,220 @@
+	"HLT",1,	0x00 ,		//cpu halts cant be restarted 
+	"NOP",1,	0x01 ,		//does nothing
+	"POP_H",1,	0x02 ,		//pop 8 bit a reg 
+	"POP_L",1,	0x03 ,		//pop 8 bit a reg 
+	"MOV_A_L",1,	0x04 ,		//Move A to L no flags effected
+	"MOV_A_H",1,	0x05 ,		//Move A to H no flags effected
+	"MOV_L_A",1,	0x06 ,		//Move L to A no flags effected
+	"MOV_H_A",1,	0x07 ,		//Move H to A no flags effected
+	"MOV_B_H",1,	0x08 ,		//Move B to H no flags effected
+	"MOV_B_L",1,	0x09 ,		//Move B to L no flags effected
+	"MOV_H_B",1,	0x0a ,		//Move H to B no flags effected
+	"MOV_L_B",1,	0x0b ,		//Move L to B no flags effected
+	"MOV_HL_DA",1,	0x0c ,		//Move HL to DA
+	"MOV_HL_CB",1,	0x0d ,		//Move HL to CB
+	"PUSHALL",1,	0x0e ,		//push all registers to stack except sp and pc
+	"POPALL",1,	0x0f ,		//pops all registers from stack except sp and pc
+	"DEC_A",1,	0x10 ,		//Decrement A flags set
+	"DEC_D",1,	0x11 ,		//Decrement B flags set
+	"INC_A",1,	0x12 ,		//Decrement A flags set
+	"INC_D",1,	0x13 ,		//Decrement D flags set
+	"DEC_X",1,	0x14 ,		//decreament 16 bit X reg flags not set
+	"DEC_Y",1,	0x15 ,		//decreament 16 bit Y reg flags not set
+	"INC_X",1,	0x16 ,		//Increament 16 bit X reg flags not set
+	"INC_Y",1,	0x17 ,		//Increament 16 bit Y reg flags not set
+	"ADC_DA_VAL",3,	0x18 ,		//Add 16 bit mem to DA with carry 
+	"ADC_DA_CB",1,	0x19 ,		//Add CB to DA with carry store result in DA 
+	"ADD_A_L",1,	0x1a ,		//Add A to reg L store result in A
+	"ADD_A_H",1,	0x1b ,		//Add A to reg H store result in A
+	"ADC_A_L",1,	0x1c ,		//Add A to reg L store result in A
+	"ADC_A_H",1,	0x1d ,		//Add A to reg H store result in A
+	"ADC_D_C",1,	0x1e ,		//Add C to D 
+	"ST_L_(X)",1,	0x1f ,		//Write L to mem with X
+	"AND_A_VAL",2,	0x20 ,		//And A imediate from mem
+	"AND_D_VAL",2,	0x21 ,		//And B imediate from mem
+	"AND_A_B",1,	0x22 ,		//A and B result in A
+	"AND_D_C",1,	0x23 ,		//D and C result in D
+	"AND_A_H",1,	0x24 ,		//A and H result in A
+	"AND_A_L",1,	0x25 ,		//A and L result in A
+	"AND_DA_CB",1,	0x26 ,		//AD and CB result in DA
+	"SLL_A",1,	0x27 ,		//shift left A by value in B result in A carry flag uneffected.
+	"SLR_A",1,	0x28 ,		//shift right A by value in B result in A carry flag effected.
+	"SLL_D",1,	0x29 ,		//shift left D result in D carry flag uneffected.
+	"SLR_D",1,	0x2a ,		//shift right D result in D carry flag effected.
+	"OR_DA_CB",1,	0x2b ,		//AD and CB result in DA
+	"AND_DA_VAL",3,	0x2c ,		//AD with MEM result in DA
+	"OR_DA_VAL",3,	0x2d ,		//AD with MEM result in DA
+	"OR_A_H",1,	0x2e ,		//A or H result in A
+	"OR_A_L",1,	0x2f ,		//A or L result in A
+	"LD_A_VAL",2,	0x30 ,		//load A immediate 
+	"LD_B_VAL",2,	0x31 ,		//load B immediate 
+	"LD_C_VAL",2,	0x32 ,		//load C immediate 
+	"LD_D_VAL",2,	0x33 ,		//load D immediate 
+	"LD_C_(X)",1,	0x34 ,		//Load C from mem with MAR
+	"LD_D_(X)",1,	0x35 ,		//Load D from mem with MAR
+	"LD_L_(X)",1,	0x36 ,		//Load L from mem with MAR
+	"LD_SP_VAL",3,	0x37 ,		//Write sp immediate
+	"LD_X_VAL",3,	0x38 ,		//load X imeadiatly from mem
+	"LD_Y_VAL",3,	0x39 ,		//load Y imeadiate
+	"LD_X_(X)",1,	0x3a ,		//load X pointed to by X
+	"LD_Y_(X)",1,	0x3b ,		//load Y pointed to by X
+	"LD_X_(Y)",1,	0x3c ,		//load X pointer to by Y
+	"LD_Y_(Y)",1,	0x3d ,		//load Y pointed to by Y
+	"LD_H_VAL",2,	0x3e ,		//load H immediate 
+	"LD_L_VAL",2,	0x3f ,		//load L immediate 
+	"ADD_DA_VAL",3,	0x40 ,		//Add 16 bit mem to DA 
+	"ADD_A_VAL",2,	0x41 ,		//Add mem location to A
+	"ADD_D_VAL",2,	0x42 ,		//Add D imediate from mem
+	"ADD_A_B",1,	0x43 ,		//Add A to reg B store result in A
+	"ADD_D_C",1,	0x44 ,		//Add C to D 
+	"ADD_DA_CB",1,	0x45 ,		//Add CB to DA store result in DA 
+	"SUB_A_VAL",2,	0x46 ,		//A - (mem location) result in A 
+	"SUB_D_VAL",2,	0x47 ,		//D - (mem location) result in D
+	"SUB_A_B",1,	0x48 ,		//A - B result in A 
+	"SUB_D_C",1,	0x49 ,		//D - C result in D
+	"CMP_A_VAL",2,	0x4a ,		//A is compared to value in memeory result in A
+	"CMP_A_B",1,	0x4b ,		//A is compared to value in B result in A
+	"CMP_D_C",1,	0x4c ,		// D is compared to C result in D
+	"ADC_A_VAL",2,	0x4d ,		//Add with carry mem location to A store in A
+	"ADC_D_VAL",2,	0x4e ,		//Add with carry D imediate from mem store in D
+	"ADC_A_B",1,	0x4f ,		//Add with carry A to B result in A
+	"MOV_A_B",1,	0x50 ,		//Move A to B no flags effected
+	"MOV_A_C",1,	0x51 ,		//Move A to C no flags effected
+	"MOV_A_D",1,	0x52 ,		//Move A to D no flags effected
+	"MOV_B_A",1,	0x53 ,		//Move B to A no flags effected
+	"MOV_B_C",1,	0x54 ,		//Move B to C no flags effected
+	"MOV_B_D",1,	0x55 ,		//Move B to D no flags effected
+	"MOV_C_A",1,	0x56 ,		//Move C to A no flags effected
+	"MOV_C_B",1,	0x57 ,		//Move C to B no flags effected
+	"MOV_C_D",1,	0x58 ,		//Move C to D no flags effected
+	"MOV_D_A",1,	0x59 ,		//Move D to A no flags effected
+	"MOV_D_B",1,	0x5a ,		//Move D to B no flags effected
+	"MOV_D_C",1,	0x5b ,		//Move D to C no flags effected
+	"MOV_SP_X",1,	0x5c ,		//Move stack pointer to X reg
+	"MOV_SP_Y",1,	0x5d ,		//Move stack pointer to Y reg
+	"MOV_SP_CB",1,	0x5e ,		//Move stack pointer to CB reg
+	"MOV_SP_HL",1,	0x5F ,		//Move stack pointer to hl reg
+	"ST_A_(X)",1,	0x60 ,		//Write A to mem with MAR
+	"ST_A_(Y)",1,	0x61 ,		//Write A to mem with Y
+	"ST_B_(X)",1,	0x62 ,		//Write B to mem with X
+	"ST_B_(Y)",1,	0x63 ,		//Write B to mem with Y
+	"ST_C_(Y)",1,	0x64 ,		//Write C to mem with Y
+	"ST_C_(X)",1,	0x65 ,		//Write C to mem with X
+	"ST_D_(Y)",1,	0x66 ,		//Write D to mem with Y
+	"ST_D_(X)",1,	0x67 ,		//Write D to mem with X
+	"LD_DA_(Y+)",1,	0x68 ,		//Load DA from mem pointed by X and inc X
+	"LD_DA_(X+)",1,	0x69 ,		//Load DA from mem pointed by Y and inc Y
+	"LD_B_(X)",1,	0x6A ,		//Load B from mem with MAR
+	"LD_A_(X)",1,	0x6b ,		//Load A from mem with MAR
+	"LD_A_(X+)",1,	0x6c ,		//Load A from mem pointed by X and inc X
+	"LD_A_(Y+)",1,	0x6d ,		//Load A from mem pointed by X and inc X
+	"ST_A_(X+)",1,	0x6e ,		//Write A to mem with MAR
+	"ST_A_(Y+)",1,	0x6f ,		//Write A to mem with Y
+	"PUSH_A",1,	0x70 ,		//push A
+	"PUSH_B",1,	0x71 ,		//push 8 bit B
+	"PUSH_C",1,	0x72 ,		//push 8 bit C
+	"PUSH_D",1,	0x73 ,		//push 8 bit B
+	"PUSH_F",1,	0x74 ,		//push flags
+	"PUSH_X",1,	0x75 ,		//Push the X reg
+	"PUSH_Y",1,	0x76 ,		//push the Y reg
+	"POP_F",1,	0x77 ,		//pop flags
+	"POP_A",1,	0x78 ,		//pop 8 bit a reg 
+	"POP_B",1,	0x79 ,		//pop 8 bit a reg 
+	"POP_C",1,	0x7A ,		//pop 8 bit a reg 
+	"POP_Y",1,	0x7b ,		// bit value
+	"POP_X",1,	0x7C ,		//pops X 16 bit value
+	"POP_D",1,	0x7D ,		//pop 8 bit a reg 
+	"PUSH_H",1,	0x7E ,		//push H
+	"PUSH_L",1,	0x7F ,		//push 8 bit L
+	"CALL_VAL",3,	0x80 ,		//Unconditional note PC and flags is saved
+	"JMP_VAL",3,	0x81 ,		//Unconditional Jump instruction
+	"JNEQ_VAL",3,	0x82 ,		//Jump if equal than flag set 
+	"JPZ_VAL",3,	0x83 ,		//Jump if zero flag set
+	"JMP_(DA)",1,	0x84 ,		//Unconditional Jump instruction with value in DA
+	"JNZ_VAL",3,	0x85 ,		//Jump if zero flag is not set
+	"JLT_VAL",3,	0x86 ,		//Jump if Less than flag set 
+	"JGT_VAL",3,	0x87 ,		//Jump if Greater than flag set
+	"JEQ_VAL",3,	0x88 ,		//Jump if equal than flag set 
+	"JPC_VAL",3,	0x89 ,		//Jump if carry than flag set 
+	"JNEG_VAL",3,	0x8A ,		//Jump if negitive flag set 
+	"JPOS_VAL",3,	0x8b ,		//Jump if negitive flag set 
+	"CALL_(DA)",1,	0x8c ,		//with value in DA Unconditional note PC and flags is saved
+	"RETI",1,	0x8e ,		//Pops pc and restores flags
+	"RET",1,	0x8f ,		//Pops pc and restores flags
+	"XOR_DA_CB",1,	0x90 ,		//XOR DA to reg CB store result in DA
+	"NOT_DA",1,	0x91 ,		//NOT DA reg store result in DA
+	"XOR_A_L",1,	0x92 ,		//A and L result in A
+	"XOR_A_B",1,	0x93 ,		//XOR A to reg B store result in A
+	"XOR_A_VAL",2,	0x94 ,		//XOR A with memeory 
+	"OR_A_VAL",2,	0x95 ,		//OR mem location to A
+	"OR_A_B",1,	0x96 ,		//OR A with B
+	"NOT_A",1,	0x97 ,		//NOT A result in A 
+	"SET_A",1,	0x98 ,		//set A set A to all ones.
+	"CLR_A",1,	0x99 ,		//clr A set A to all zeros.
+	"SET_D",1,	0x9a ,		//set A set A to all ones.
+	"CLR_D",1,	0x9b ,		//clr A set A to all zeros.
+	"SET_DA",1,	0x9c ,		//set DA set DA to all ones.
+	"CLR_DA",1,	0x9d ,		//clr DA set DA to all zeros.
+	"OR_D_VAL",2,	0x9e ,		//OR mem location to D
+	"OR_D_C",1,	0x9f ,		//OR D with C result in D
+	"XOR_A_H",1,	0xA0 ,		//A xor H result in A
+	"XOR_DA_VAL",3,	0xa1 ,		//AD with MEM result in DA
+	"XOR_DA_(X+)",1,	0xa2 ,		//AD with MEM pointed to by X result in DA
+	"SBC_A_VAL",2,	0xa3 ,		//A - (mem location) result in A with borrow
+	"SBC_D_VAL",2,	0xa4 ,		//D - (mem location) result in D with borrow
+	"SBC_A_B",1,	0xa5 ,		//A - B result in A with borrow
+	"SBC_D_C",1,	0xa6 ,		//D - C result in D with borrow
+	"SBC_A_H",1,	0xa7 ,		//A - H result in A with borrow
+	"SBC_A_L",1,	0xa8 ,		//A - L result in A with borrow
+	"SUB_A_H",1,	0xa9 ,		//A - H result in A with borrow
+	"SUB_A_L",1,	0xaa ,		//A - L result in A with borrow
+	"SUB_DA_VAL",3,	0xab ,		//DA - mem result in DA
+	"SBC_DA_VAL",3,	0xac ,		//DA - mem result in DA with borrow
+	"SUB_DA_CB",3,	0xad ,		//DA - CB result in DA
+	"SBC_DA_CB",1,	0xae ,		//DA - CB result in DA with borrow
+	"CMP_D_VAL",2,	0xaf ,		//D is compared to value in memeory result in D
+	"LD_H_X",1,	0xB0 ,		//Load H from mem with MAR
+	"MOV_CB_HL",1,	0xb1 ,		//Move CB to HL
+	"MOV_CB_DA",1,	0xb2 ,		//Move CB to DA
+	"MOV_DA_CB",1,	0xb3 ,		//Move DA to HL
+	"MOV_DA_SP",1,	0xb4 ,		//Move DA to SP
+	"MOV_DA_X",1,	0xb5 ,		//Move DA to X reg
+	"MOV_DA_Y",1,	0xb6 ,		//Move DA to Y
+	"ST_H_(X)",1,	0xb7 ,		//Write H to mem with X
+	"ST_H_(Y)",1,	0xb8 ,		//Write H to mem with Y
+	"ST_L_(Y)",1,	0xb9 ,		//Write L to mem with Y
+	"MOV_X_DA",1,	0xba ,		//Move X to DA reg
+	"MOV_Y_DA",1,	0xbb ,		//Move Y to DA
+	"PUSH_HL",1,	0xbc ,		//Push the HL reg pair
+	"POP_HL",1,	0xbd ,		//pops HL 16 bit value
+	"MOV_SP_DA",1,	0xbe ,		//Move stack pointer to DA reg
+	"MOV_DA_HL",1,	0xc0 ,		//Move DA to HL
+	"LD_HL_VAL",3,	0xc1 ,		//load HL immediate 
+	"LD_DA_VAL",3,	0xc2 ,		//load DA immediate 
+	"LD_CB_VAL",3,	0xc3 ,		//load CB immediate 
+	"LD_HL_(Y+)",1,	0xc4 ,		//Load HL from mem pointed by X and inc X
+	"LD_HL_(X+)",1,	0xc5 ,		//Load HL from mem pointed by Y and inc Y
+	"LD_CB_(Y+)",1,	0xc6 ,		//Load CB from mem pointed by X and inc X
+	"LD_CB_(X+)",1,	0xc7 ,		//Load CB from mem pointed by Y and inc Y
+	"ST_HL_(Y+)",1,	0xc8 ,		//Store HL from mem pointed by X and inc X
+	"ST_HL_(X+)",1,	0xc9 ,		//Store HL from mem pointed by X and inc X
+	"ST_CB_(Y+)",1,	0xca ,		//STORE CB from mem pointed by X and inc X
+	"ST_CB_(X+)",1,	0xcb ,		//STORE CB from mem pointed by Y and inc Y
+	"XOR_D_C",1,	0xcc ,		//XOR D to reg D store result in D
+	"ST_DA_(X+)",1,	0xcd ,		//STORE CB from mem pointed by X and inc X
+	"ST_DA_(Y+)",1,	0xce ,		//STORE CB from mem pointed by Y and inc Y
+	"LD_B_(X+)",1,	0xd0 ,		//Load B from mem with MAR and inc MAR
+	"LD_B_(Y+)",1,	0xd1 ,		//Load B from mem with Y and inc Y
+	"LD_C_(Y)",1,	0xd2 ,		//Load C from mem with Y
+	"LD_D_(Y)",1,	0xd3 ,		//Load D from mem with Y
+	"LD_L_(Y)",1,	0xd4 ,		//Load L from mem with Y
+	"LD_H_(Y)",1,	0xd5 ,		//Load H from mem with Y
+	"LD_B_(Y)",1,	0xd6 ,		//Load B from mem with Y
+	"ST_D_(Y+)",1,	0xd7 ,		//Write D to mem with Y
+	"ST_D_(X+)",1,	0xd8 ,		//Write D to mem with X
+	"ADD_DA_(X+)",1,	0xe0 ,		//ADD with pointed to by X MEM result in DA
+	"ADC_DA_(X+)",1,	0xe1 ,		//ADC with pointed to by X MEM result in DA
+	"SUB_DA_(X+)",1,	0xe2 ,		//SUB with pointed to by X MEM result in DA
+	"SBC_DA_(X+)",1,	0xe3 ,		//SBC with pointed to by X MEM result in DA
+	"AND_DA_(X+)",1,	0xe4 ,		//AND with pointed to by X MEM result in DA
+	"OR_DA_(X+)",1,	0xe5 ,		//or with pointed to by X MEM result in DA
